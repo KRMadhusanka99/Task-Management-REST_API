@@ -21,4 +21,6 @@ public class Members {
     public Members(String memberName) {
         this.memberName = memberName;
     }
+
+    public Members(int id) {this.id = id;}
 }

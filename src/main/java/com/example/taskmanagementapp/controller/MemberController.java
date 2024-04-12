@@ -21,7 +21,10 @@ public class MemberController {
     @PostMapping("/add")
     public ResponseEntity<MemberResponseDTO> addMember(@RequestBody MemberRequestDTO memberRequestDTO){
         Members savedMember = memberService.addMember(memberRequestDTO);
-        MemberResponseDTO memberResponseDTO = new MemberResponseDTO(savedMember.getId(), savedMember.getMemberName());
+        MemberResponseDTO memberResponseDTO = new MemberResponseDTO(
+                savedMember.getId(),
+                savedMember.getMemberName()
+        );
         return ResponseEntity.ok().body(memberResponseDTO);
     }
 }

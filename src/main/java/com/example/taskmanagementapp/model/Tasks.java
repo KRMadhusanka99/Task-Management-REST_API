@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Tasks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int gameId;
+    private int taskId;
 
     @ManyToOne
     @JoinColumn(name = "member_id")
@@ -25,43 +25,10 @@ public class Tasks {
 
     private String taskStatus;
 
-    public int getGameId() {
-        return gameId;
-    }
-
-    public void setGameId(int gameId) {
-        this.gameId = gameId;
-    }
-
-    public Members getMember() {
-        return member;
-    }
-
-    public void setMember(Members member) {
-        this.member = member;
-    }
-
-    public String getTaskName() {
-        return taskName;
-    }
-
-    public void setTaskName(String taskName) {
+    public Tasks(int memberId, String taskName, String taskDescription, String taskStatus) {
+        this.member = new Members(memberId);
         this.taskName = taskName;
-    }
-
-    public String getTaskDescription() {
-        return taskDescription;
-    }
-
-    public void setTaskDescription(String taskDescription) {
         this.taskDescription = taskDescription;
-    }
-
-    public String getTaskStatus() {
-        return taskStatus;
-    }
-
-    public void setTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
     }
 }
