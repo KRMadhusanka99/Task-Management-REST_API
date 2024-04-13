@@ -20,12 +20,14 @@ public class TaskController {
     @PostMapping("/add")
     public ResponseEntity<TaskResponseDTO> addTask(@RequestBody TaskRequestDTO taskRequestDTO) {
         Tasks tasks = taskService.save(taskRequestDTO);
+        System.out.println(tasks);
         TaskResponseDTO taskResponseDTO = new TaskResponseDTO(
                 tasks.getTaskId(),
                 tasks.getTaskName(),
                 tasks.getTaskDescription(),
                 tasks.getTaskStatus(),
-                tasks.getMember().getId()
+                tasks.getMember().getId(),
+                tasks.getMember().getName()
         );
         return ResponseEntity.ok().body(taskResponseDTO);
     }

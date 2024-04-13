@@ -13,4 +13,5 @@ public class TaskResponseDTO {
     private String taskDescription;
     private String taskStatus;
     private int memberId;
+    private String memberName;
 }

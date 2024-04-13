@@ -25,8 +25,8 @@ public class Tasks {
 
     private String taskStatus;
 
-    public Tasks(int memberId, String taskName, String taskDescription, String taskStatus) {
-        this.member = new Members(memberId);
+    public Tasks(Members member, String taskName, String taskDescription, String taskStatus) {
+        this.member = member;
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskStatus = taskStatus;

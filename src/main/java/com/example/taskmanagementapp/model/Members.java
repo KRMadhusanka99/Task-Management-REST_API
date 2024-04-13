@@ -22,5 +22,7 @@ public class Members {
         this.memberName = memberName;
     }
 
-    public Members(int id) {this.id = id;}
+    public String getName() {
+        return memberName;
+    }
 }
